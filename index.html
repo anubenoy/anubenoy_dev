@@ -1,211 +1,305 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!doctype html>
+<html lang="en" class="scroll-smooth bg-slate-900">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Anu Benoy - Professional Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/png" href="assets/favicon-96x96.png" sizes="96x96" />
-</head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">
-                <img src="assets/ABlogo.png" alt="Anu Logo" class="logo-img">
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+            colors: {
+              slate: {
+                200: "#edf7ed", // evergreen-50 (Headers)
+                300: "#dcefdc", // evergreen-100
+                400: "#b9dfb9", // evergreen-200 (Main text)
+                500: "#95d095", // evergreen-300 (Muted text)
+                600: "#4fb04f", // evergreen-500 (Borders/Indicators)
+                800: "#102310", // evergreen-900 (Card hover bg)
+                900: "#0b190b", // evergreen-950 (Main bg)
+              },
+              teal: {
+                300: "#dbe949", // lime-cream-400 (Accent text)
+                400: "#a8b616", // lime-cream-600 (Accent bg opacity)
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-slate-900 leading-relaxed text-slate-400 antialiased selection:bg-teal-300 selection:text-teal-900"
+  >
+    <!-- Spotlight background effect -->
+    <div
+      class="pointer-events-none fixed inset-0 z-30 transition duration-300"
+      id="cursor-spotlight"
+      style="
+        background: radial-gradient(
+          600px at 0px 0px,
+          rgba(29, 78, 216, 0.15),
+          transparent 80%
+        );
+      "
+    ></div>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <img src="assets/avthar_bg.png" alt="Avatar" class="hero-bg-image">
-        <div class="hero-content">
-            <div class="hero-text-left">
-                <h2 class="hero-subtitle">Hey, Im a</h2>
-                <h1 class="hero-title">Programmer, Analyst</h1>
-            </div>
-            <div class="hero-text-right">
-                <p class="hero-description">Detail-oriented Data Analyst with hands-on experience in data extraction, automation, and cloud workflows. Passionate about streamlining processes, solving real business problems, and growing within a forward-thinking team.</p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                    <a href="assets/AnuBenoy_S:WAug25.pdf" class="btn btn-secondary" download>Download CV</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div
+      class="mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0 relative z-40"
+    >
+      <div class="lg:flex lg:justify-between lg:gap-4">
+        <!-- Left Header (Sticky on Desktop) -->
+        <header
+          class="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24"
+        >
+          <div>
+            <a
+              href="mailto:anubenoyarackal912@gmail.com"
+              class="inline-block mb-6 transition-transform hover:scale-105"
+              aria-label="Email QR Code"
+            >
+              <img
+                src="assets/email-qr.png"
+                alt="QR Code to Email"
+                class="w-30 h-30"
+              />
+            </a>
+            <h1
+              class="text-4xl font-bold tracking-tight text-slate-200 sm:text-6xl"
+            >
+              <a href="/">Anu Benoy</a>
+            </h1>
+            <h2
+              class="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl"
+            >
+             👩🏻‍🎓  Engineer 
+            </h2>
+            <p class="mt-4 max-w-xs leading-normal">
+              I am passionate about building things and solving problems that make a difference. 
+            </p>
 
-    <!-- Programming Languages Section -->
-    <section class="languages">
-        <div class="languages-scroll">
-            <div class="languages-track">
-                <div class="language-item">
-                    <i class="fab fa-swift"></i>
-                    <div class="language-info">
-                        <span class="language-name">Swift</span>
-                        <span class="language-level">Expert</span>
-                    </div>
-                </div>
-                <div class="language-item">
-                    <i class="fab fa-swift"></i>
-                    <div class="language-info">
-                        <span class="language-name">SwiftUI</span>
-                        <span class="language-level">Intermediate</span>
-                    </div>
-                </div>
-                <div class="language-item">
-                    <i class="fab fa-python"></i>
-                    <div class="language-info">
-                        <span class="language-name">Python</span>
-                        <span class="language-level">Expert</span>
-                    </div>
-                </div>
-                <div class="language-item">
-                    <i class="fas fa-database"></i>
-                    <div class="language-info">
-                        <span class="language-name">SQL</span>
-                        <span class="language-level">Expert</span>
-                    </div>
-                </div>
-                <div class="language-item">
-                    <i class="fab fa-java"></i>
-                    <div class="language-info">
-                        <span class="language-name">Java</span>
-                        <span class="language-level">Professional</span>
-                    </div>
-                </div>
-                <div class="language-item">
-                    <i class="fab fa-js-square"></i>
-                    <div class="language-info">
-                        <span class="language-name">JavaScript</span>
-                        <span class="language-level">Expert</span>
-                    </div>
-                </div>
-                <div class="language-item">
-                    <i class="fas fa-code"></i>
-                    <div class="language-info">
-                        <span class="language-name">Dart</span>
-                        <span class="language-level">Expert</span>
-                    </div>
-                </div>
-                <div class="language-item">
-                    <i class="fas fa-code"></i>
-                    <div class="language-info">
-                        <span class="language-name">C | C++</span>
-                        <span class="language-level">Expert</span>
-                    </div>
-                </div>
-                <div class="language-item">
-                    <i class="fab fa-php"></i>
-                    <div class="language-info">
-                        <span class="language-name">PHP</span>
-                        <span class="language-level">Professional</span>
-                    </div>
-                </div>
-                <div class="language-item">
-                    <i class="fab fa-swift"></i>
-                    <div class="language-info">
-                        <span class="language-name">Objective-C</span>
-                        <span class="language-level">Intermediate</span>
-                    </div>
-                </div>
-                <div class="language-item">
-                    <i class="fas fa-mobile-alt"></i>
-                    <div class="language-info">
-                        <span class="language-name">Flutter</span>
-                        <span class="language-level">Intermediate</span>
-                    </div>
-                </div>
-                <div class="language-item">
-                    <i class="fab fa-windows"></i>
-                    <div class="language-info">
-                        <span class="language-name">VB.NET</span>
-                        <span class="language-level">Intermediate</span>
-                    </div>
-                </div>
+            <nav class="nav hidden lg:block" aria-label="In-page jump links">
+              <ul class="mt-16 w-max">
+                <li>
+                  <a
+                    class="group flex items-center py-3 active nav-item"
+                    href="#about"
+                  >
+                    <span
+                      class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"
+                    ></span>
+                    <span
+                      class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200"
+                      >About</span
+                    >
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="group flex items-center py-3 nav-item"
+                    href="#experience"
+                  >
+                    <span
+                      class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"
+                    ></span>
+                    <span
+                      class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200"
+                      >Experience</span
+                    >
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="group flex items-center py-3 nav-item"
+                    href="#education"
+                  >
+                    <span
+                      class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"
+                    ></span>
+                    <span
+                      class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200"
+                      >Education</span
+                    >
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <ul
+            class="ml-1 mt-8 flex items-center gap-5"
+            aria-label="Social media"
+          >
+            <li class="shrink-0">
+              <a
+                class="block hover:text-slate-200"
+                href="https://github.com/anubenoy"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span class="sr-only">GitHub</span>
+                <i class="fab fa-github fa-lg"></i>
+              </a>
+            </li>
+            <li class="shrink-0">
+              <a
+                class="block hover:text-slate-200"
+                href="https://www.linkedin.com/in/anu-benoy/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span class="sr-only">LinkedIn</span>
+                <i class="fab fa-linkedin fa-lg"></i>
+              </a>
+            </li>
+            <li class="shrink-0">
+              <a
+                class="block hover:text-slate-200"
+                href="mailto:anubenoyarackal912@gmail.com"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span class="sr-only">Email</span>
+                <i class="fas fa-envelope fa-lg"></i>
+              </a>
+            </li>
+          </ul>
+        </header>
+
+        <!-- Right Content -->
+        <main id="content" class="pt-24 lg:w-1/2 lg:py-24">
+          <section
+            id="about"
+            class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
+            aria-label="About me"
+          >
+            <div
+              class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0"
+            >
+              <h2
+                class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only"
+              >
+                About
+              </h2>
             </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience">
-        <iframe src="exp.html" style="width: 100%; height: 80vh; border: none;"></iframe>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="projects-container">
-            <video class="project-video-bg" autoplay muted loop>
-                <source src="assets/Ngmart.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="projects-overlay"></div>
-            <div class="projects-carousel">
-                <div class="projects-content">
-                    <h2 class="project-title">NGMart</h2>
-                    <p class="project-description">A responsive web platform integrating shops in small towns, enabling sellers to participate in e-commerce and giving buyers visibility of product availability and inventory management with automated expiry date tracking.</p>
-                </div>
+            <div>
+              <p class="mb-3">
+                Administrative and technology professional with 3+ years of
+                experience supporting operations, coordinating cross-functional
+                teams, and managing complex business processes. Combining strong
+                organizational expertise with advanced software engineering
+                knowledge, I specialize in designing scalable applications,
+                architecting large-scale systems, and developing sophisticated
+                algorithms that address real-world business challenges.
+              </p>
+              <p class="mb-3">
+                My background spans workflow optimization, project coordination,
+                data management, software development, system architecture, and
+                process automation. With expertise in Microsoft Office Suite,
+                Excel, programming, and modern development methodologies, I
+                bridge the gap between business operations and technology to
+                deliver efficient, scalable, and impactful solutions.
+              </p>
+              <p>
+                I am passionate about building reliable systems, solving complex
+                problems, and leveraging technology to drive innovation,
+                operational excellence, and long-term business success.
+              </p>
             </div>
-            <div class="carousel-dots" id="projectDots">
-                <div class="carousel-dot active" data-video="0"></div>
-                <div class="carousel-dot" data-video="1"></div>
+          </section>
+
+          <section
+            id="experience"
+            class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
+            aria-label="Work experience"
+          >
+            <div
+              class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0"
+            >
+              <h2
+                class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only"
+              >
+                Experience
+              </h2>
             </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer" id ="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <div class="footer-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p><a href="mailto:anu.benoy@example.com">anu.benoy@example.com</a></p>
-                        </div>
-                    </div>
-                    <div class="footer-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Phone</h4>
-                            <p><a href="tel:+1234567890">+1 (234) 567-890</a></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="footer-social">
-                    <a href="https://www.linkedin.com/in/anu-benoy/" class="social-link" title="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/anubenoy" class="social-link" title="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="mailto:anubenoyarackal912@gmail.com" class="social-link" title="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                </div>
+            <div>
+              <ol class="group/list" id="experience-list"></ol>
             </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2026 Anu Benoy. All rights reserved.</p>
-                <p>Crafted with <i class="fas fa-heart"></i> by Anu Benoy</p>
+            <div class="mt-12">
+              <a
+                class="inline-flex items-center font-medium leading-tight text-slate-200 font-semibold group"
+                aria-label="View Full Resume"
+                href="assets/AnuBenoy_S:WAug25.pdf"
+                target="_blank"
+              >
+                <span>
+                  <span
+                    class="border-b border-transparent pb-px transition group-hover:border-teal-300 motion-reduce:transition-none"
+                    >View Full
+                  </span>
+                  <span class="whitespace-nowrap">
+                    <span
+                      class="border-b border-transparent pb-px transition group-hover:border-teal-300 motion-reduce:transition-none"
+                      >Resume</span
+                    >
+                    <i
+                      class="fas fa-arrow-right ml-1 inline-block h-4 w-4 shrink-0 -translate-y-px transition-transform group-hover:translate-x-2 group-focus-visible:translate-x-2 motion-reduce:transition-none"
+                    ></i>
+                  </span>
+                </span>
+              </a>
             </div>
-        </div>
-    </footer>
+          </section>
 
+          <section
+            id="education"
+            class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
+            aria-label="Education and Certifications"
+          >
+            <div
+              class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0"
+            >
+              <h2
+                class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only"
+              >
+                Education
+              </h2>
+            </div>
+            <div>
+              <ul class="group/list" id="education-list"></ul>
+            </div>
+          </section>
+
+          <footer class="max-w-md pb-16 text-xs text-slate-500 sm:pb-0 text-center">
+            <p>
+              Designed & build by Anu Benoy. Feel free to download this and
+              modify as per your likings.
+            </p>
+          </footer>
+        </main>
+      </div>
+    </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
